@@ -1,4 +1,18 @@
 /* Template function that can be a stack, a queue or an iterator.
+
+    Copyright (C) <2018>  <David Swanson>
+    https://github.com/sugarvillela
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
  * QStack is implemented on a linked list data structure.
  * For stack operations, call push, pop, top, size and empty.
  * For queue operations, call enqueue, dequeue, bottom, size and empty. 
