@@ -1,4 +1,5 @@
-#include "../header/qStack.h"
+/* By David Swanson https://github.com/sugarvillela */
+#include "qStack.h"
 void test_qstack_stack(){
     cout << "Test stack: Pushing five! four three two one zero" << endl;
     QStack< string > Q;
