@@ -27,7 +27,6 @@ void nToChars( unsigned short in, unsigned char buf[] ){//buffer size 6 for 16 b
 	for ( i=n-1; i>=0; i-- ){
 		next = in/10;
 		curr = in - ( next*10 );
-		//printf( "curr %d, %c\n", curr, curr+'0' );
 		buf[i]=curr+'0';
 		in = next;
 	}
@@ -38,10 +37,8 @@ void nToHex( unsigned short in, unsigned char buf[] ){//buffer size 5 for 16 bit
 	unsigned char n = hexPlaces( in );
 	char hex[]="0123456789ABCDEF";
 	char i;
-	printf("nToHex: %d\n", in );
 	for ( i=n-1; i>=0; i-- ){
 		buf[i]=hex[in&0x0F];
-		printf("i=%d, n=%d\n", i, in );
 		in=in>>4;
 	}
 	buf[n]='\0';
