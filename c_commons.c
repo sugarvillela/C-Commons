@@ -10,7 +10,16 @@ unsigned char decPlaces( unsigned short in ){
 	}
 	return i;
 }
-void nToChars( unsigned short in, unsigned char buf[] ){//buffer 6 for 16 bit range
+unsigned char hexPlaces( unsigned short in ){
+	/* Finds log 16 of input number */
+	if( in==0 ){ return 1; }
+	unsigned char i;
+	for ( i=0; in && i< 0xFF; i++ ){
+		in=in>>4;
+	}
+	return i;
+}
+void nToChars( unsigned short in, unsigned char buf[] ){//buffer size 6 for 16 bit range
   /* Returns input number in string form; buf size must be sufficient */
 	unsigned char n = decPlaces( in );
 	unsigned short next, curr;
@@ -21,6 +30,19 @@ void nToChars( unsigned short in, unsigned char buf[] ){//buffer 6 for 16 bit ra
 		//printf( "curr %d, %c\n", curr, curr+'0' );
 		buf[i]=curr+'0';
 		in = next;
+	}
+	buf[n]='\0';
+}
+void nToHex( unsigned short in, unsigned char buf[] ){//buffer size 5 for 16 bit range
+	/* Writes input number in hexadecimal to string buf; buf size must be sufficient */
+	unsigned char n = hexPlaces( in );
+	char hex[]="0123456789ABCDEF";
+	char i;
+	printf("nToHex: %d\n", in );
+	for ( i=n-1; i>=0; i-- ){
+		buf[i]=hex[in&0x0F];
+		printf("i=%d, n=%d\n", i, in );
+		in=in>>4;
 	}
 	buf[n]='\0';
 }
