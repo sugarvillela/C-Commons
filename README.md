@@ -1,4 +1,7 @@
-# QStack
+## LZ78 Implementation
+* LZ78 is a lossless data compression algorithm published by Abraham Lempel and Jacob Ziv in 1977
+
+## QStack
 Template function that can be a stack, a queue or an iterator
  * QStack is implemented as a linked list data structure.
  * For stack operations, call push, pop, top, size and empty.
